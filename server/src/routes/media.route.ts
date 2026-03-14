@@ -16,9 +16,9 @@ export default async function mediaRoutes(fastify: FastifyInstance, options: Fas
       }
     })
     if (!data) {
-      throw new Error('Không tìm thấy file')
+      throw new Error('File not found')
     }
     const url = await uploadImage(data)
-    return reply.send({ message: 'Upload ảnh thành công', data: url })
+    return reply.send({ message: 'Upload image successfully', data: url })
   })
 }

@@ -57,7 +57,7 @@ export default function RegisterForm() {
             </Field>
 
             <Button type="submit" className="w-full h-10 mt-[20px] cursor-pointer">
-                Đăng nhập
+                Sign up
             </Button>
         </form>
     );

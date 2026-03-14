@@ -51,7 +51,7 @@ export default async function authRoutes(fastify: FastifyInstance, options: Fast
             domain: envConfig.DOMAIN
           })
           .send({
-            message: 'Đăng ký thành công',
+            message: 'Register successfully.',
             data: {
               token: session.token,
               expiresAt: session.expiresAt.toISOString(),
@@ -60,7 +60,7 @@ export default async function authRoutes(fastify: FastifyInstance, options: Fast
           })
       } else {
         reply.send({
-          message: 'Đăng ký thành công',
+          message: 'Register successfully.',
           data: {
             token: session.token,
             expiresAt: session.expiresAt.toISOString(),
@@ -127,7 +127,7 @@ export default async function authRoutes(fastify: FastifyInstance, options: Fast
             domain: envConfig.DOMAIN
           })
           .send({
-            message: 'Đăng nhập thành công',
+            message: 'Login successful.',
             data: {
               token: session.token,
               expiresAt: session.expiresAt.toISOString(),
@@ -136,7 +136,7 @@ export default async function authRoutes(fastify: FastifyInstance, options: Fast
           })
       } else {
         reply.send({
-          message: 'Đăng nhập thành công',
+          message: 'Login successful.',
           data: {
             token: session.token,
             expiresAt: session.expiresAt.toISOString(),
@@ -174,7 +174,7 @@ export default async function authRoutes(fastify: FastifyInstance, options: Fast
             domain: envConfig.DOMAIN
           })
           .send({
-            message: 'Refresh session thành công',
+            message: 'Refresh session successfully.',
             data: {
               token: session.token,
               account: request.account!,
@@ -183,7 +183,7 @@ export default async function authRoutes(fastify: FastifyInstance, options: Fast
           })
       } else {
         reply.send({
-          message: 'Refresh session thành công',
+          message: 'Refresh session successfully.',
           data: {
             token: session.token,
             expiresAt: session.expiresAt.toISOString(),

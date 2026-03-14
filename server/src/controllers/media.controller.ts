@@ -16,7 +16,7 @@ export const uploadImage = async (data: MultipartFile) => {
   if (data.file.truncated) {
     // Xóa file nếu file bị trucated
     await fs.unlinkSync(filepath)
-    throw new Error('Giới hạn file là 10MB')
+    throw new Error('Max capacity of file is 10MB.')
   }
   const url = `${API_URL}` + '/static/' + id
   return url

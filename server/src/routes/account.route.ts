@@ -17,7 +17,7 @@ export default async function accountRoutes(fastify: FastifyInstance, options: F
     async (request, reply) => {
       reply.send({
         data: request.account!,
-        message: 'Lấy thông tin thành công'
+        message: 'Get information successfully.'
       })
     }
   )
@@ -38,7 +38,7 @@ export default async function accountRoutes(fastify: FastifyInstance, options: F
       const result = await updateMeController(request.account?.id as number, request.body)
       reply.send({
         data: result,
-        message: 'Cập nhật thông tin thành công'
+        message: 'Update information successfully.'
       })
     }
   )

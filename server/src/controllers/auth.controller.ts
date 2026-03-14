@@ -37,7 +37,7 @@ export const registerController = async (body: RegisterBodyType) => {
   } catch (error: any) {
     if (isPrismaClientKnownRequestError(error)) {
       if (error.code === PrismaErrorCode.UniqueConstraintViolation) {
-        throw new EntityError([{ field: 'email', message: 'Email đã tồn tại' }])
+        throw new EntityError([{ field: 'email', message: 'Email already exists.' }])
       }
     }
     throw error
@@ -49,7 +49,7 @@ export const logoutController = async (sessionToken: string) => {
       token: sessionToken
     }
   })
-  return 'Đăng xuất thành công'
+  return 'Logout successful.'
 }
 
 /**
@@ -75,11 +75,11 @@ export const loginController = async (body: LoginBodyType) => {
     }
   })
   if (!account) {
-    throw new EntityError([{ field: 'email', message: 'Email không tồn tại' }])
+    throw new EntityError([{ field: 'email', message: 'Email already exists' }])
   }
   const isPasswordMatch = await comparePassword(body.password, account.password)
   if (!isPasswordMatch) {
-    throw new EntityError([{ field: 'password', message: 'Email hoặc mật khẩu không đúng' }])
+    throw new EntityError([{ field: 'password', message: 'Email or Password is incorrect.' }])
   }
   const sessionToken = signSessionToken({
     userId: account.id

@@ -37,7 +37,7 @@ export default async function productRoutes(fastify: FastifyInstance, options: F
       const products = await getProductList()
       reply.send({
         data: products,
-        message: 'Lấy danh sách sản phẩm thành công!'
+        message: 'Get list of product successfully!'
       })
     }
   )
@@ -59,7 +59,7 @@ export default async function productRoutes(fastify: FastifyInstance, options: F
       const product = await getProductDetail(request.params.id)
       reply.send({
         data: product,
-        message: 'Lấy thông tin sản phẩm thành công!'
+        message: 'Get information of product successfully!'
       })
     }
   )
@@ -82,7 +82,7 @@ export default async function productRoutes(fastify: FastifyInstance, options: F
       const product = await createProduct(request.body)
       reply.send({
         data: product,
-        message: 'Tạo sản phẩm thành công!'
+        message: 'Create product successfully!'
       })
     }
   )
@@ -107,7 +107,7 @@ export default async function productRoutes(fastify: FastifyInstance, options: F
       const product = await updateProduct(request.params.id, request.body)
       reply.send({
         data: product,
-        message: 'Cập nhật sản phẩm thành công!'
+        message: 'Update product successfully!'
       })
     }
   )
@@ -129,7 +129,7 @@ export default async function productRoutes(fastify: FastifyInstance, options: F
     async (request, reply) => {
       await deleteProduct(request.params.id)
       reply.send({
-        message: 'Xóa sản phẩm thành công!'
+        message: 'Delete product successfully!'
       })
     }
   )
